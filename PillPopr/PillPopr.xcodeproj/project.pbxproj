@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F3139E71282EA8A4008E4CDC /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3139E70282EA8A4008E4CDC /* SplashScreenController.swift */; };
 		F3139E73282EACCD008E4CDC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3139E72282EACCD008E4CDC /* HomeController.swift */; };
+		F3BE94E4282FD058002BEF43 /* MedicationScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E3282FD058002BEF43 /* MedicationScheduleController.swift */; };
+		F3BE94E6282FD529002BEF43 /* NewMedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E5282FD529002BEF43 /* NewMedController.swift */; };
+		F3BE94E8282FD69F002BEF43 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */; };
+		F3BE94EA282FD847002BEF43 /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E9282FD847002BEF43 /* SetupController.swift */; };
 		F3D33AB6282EA77D00F2A3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB5282EA77D00F2A3F0 /* AppDelegate.swift */; };
 		F3D33AB8282EA77D00F2A3F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB7282EA77D00F2A3F0 /* SceneDelegate.swift */; };
 		F3D33ABA282EA77D00F2A3F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB9282EA77D00F2A3F0 /* ViewController.swift */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		F3139E70282EA8A4008E4CDC /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		F3139E72282EACCD008E4CDC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F3BE94E3282FD058002BEF43 /* MedicationScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationScheduleController.swift; sourceTree = "<group>"; };
+		F3BE94E5282FD529002BEF43 /* NewMedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedController.swift; sourceTree = "<group>"; };
+		F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
+		F3BE94E9282FD847002BEF43 /* SetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupController.swift; sourceTree = "<group>"; };
 		F3D33AB2282EA77D00F2A3F0 /* PillPopr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillPopr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D33AB5282EA77D00F2A3F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3D33AB7282EA77D00F2A3F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,9 +54,13 @@
 		F3139E6F282EA881008E4CDC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3BE94E3282FD058002BEF43 /* MedicationScheduleController.swift */,
 				F3D33AB9282EA77D00F2A3F0 /* ViewController.swift */,
 				F3139E70282EA8A4008E4CDC /* SplashScreenController.swift */,
+				F3BE94E5282FD529002BEF43 /* NewMedController.swift */,
+				F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */,
 				F3139E72282EACCD008E4CDC /* HomeController.swift */,
+				F3BE94E9282FD847002BEF43 /* SetupController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,8 +170,12 @@
 				F3D33ABA282EA77D00F2A3F0 /* ViewController.swift in Sources */,
 				F3D33AB6282EA77D00F2A3F0 /* AppDelegate.swift in Sources */,
 				F3139E73282EACCD008E4CDC /* HomeController.swift in Sources */,
+				F3BE94EA282FD847002BEF43 /* SetupController.swift in Sources */,
 				F3D33AB8282EA77D00F2A3F0 /* SceneDelegate.swift in Sources */,
 				F3D33AC0282EA77D00F2A3F0 /* PillPopr.xcdatamodeld in Sources */,
+				F3BE94E6282FD529002BEF43 /* NewMedController.swift in Sources */,
+				F3BE94E4282FD058002BEF43 /* MedicationScheduleController.swift in Sources */,
+				F3BE94E8282FD69F002BEF43 /* ConfirmationController.swift in Sources */,
 				F3139E71282EA8A4008E4CDC /* SplashScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
