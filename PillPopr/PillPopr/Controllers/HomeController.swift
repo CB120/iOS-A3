@@ -10,7 +10,9 @@ import UIKit
 
 class HomeController: UIViewController {
 
+    @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
+    
     var name: String = "User";
     
     override func viewDidLoad() {
