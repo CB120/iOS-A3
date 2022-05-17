@@ -10,8 +10,11 @@ import UIKit
 
 class HomeController: UIViewController {
 
+    @IBOutlet weak var welcomeTitle: UILabel!
+    var name: String = "User";
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad();
+        welcomeTitle.text = "Welcome " + name;
     }
 }
