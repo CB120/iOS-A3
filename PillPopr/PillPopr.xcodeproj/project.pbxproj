@@ -15,7 +15,7 @@
 		F3BE94EA282FD847002BEF43 /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E9282FD847002BEF43 /* SetupController.swift */; };
 		F3D33AB6282EA77D00F2A3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB5282EA77D00F2A3F0 /* AppDelegate.swift */; };
 		F3D33AB8282EA77D00F2A3F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB7282EA77D00F2A3F0 /* SceneDelegate.swift */; };
-		F3D33ABA282EA77D00F2A3F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB9282EA77D00F2A3F0 /* ViewController.swift */; };
+		F3D33ABA282EA77D00F2A3F0 /* editScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D33AB9282EA77D00F2A3F0 /* editScheduleViewController.swift */; };
 		F3D33ABD282EA77D00F2A3F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D33ABB282EA77D00F2A3F0 /* Main.storyboard */; };
 		F3D33AC0282EA77D00F2A3F0 /* PillPopr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3D33ABE282EA77D00F2A3F0 /* PillPopr.xcdatamodeld */; };
 		F3D33AC2282EA77E00F2A3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D33AC1282EA77E00F2A3F0 /* Assets.xcassets */; };
@@ -32,7 +32,7 @@
 		F3D33AB2282EA77D00F2A3F0 /* PillPopr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillPopr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D33AB5282EA77D00F2A3F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3D33AB7282EA77D00F2A3F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3D33AB9282EA77D00F2A3F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3D33AB9282EA77D00F2A3F0 /* editScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editScheduleViewController.swift; sourceTree = "<group>"; };
 		F3D33ABC282EA77D00F2A3F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3D33ABF282EA77D00F2A3F0 /* PillPopr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PillPopr.xcdatamodel; sourceTree = "<group>"; };
 		F3D33AC1282EA77E00F2A3F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				F3BE94E3282FD058002BEF43 /* MedicationScheduleController.swift */,
-				F3D33AB9282EA77D00F2A3F0 /* ViewController.swift */,
+				F3D33AB9282EA77D00F2A3F0 /* editScheduleViewController.swift */,
 				F3139E70282EA8A4008E4CDC /* SplashScreenController.swift */,
 				F3BE94E5282FD529002BEF43 /* NewMedController.swift */,
 				F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */,
@@ -167,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3D33ABA282EA77D00F2A3F0 /* ViewController.swift in Sources */,
+				F3D33ABA282EA77D00F2A3F0 /* editScheduleViewController.swift in Sources */,
 				F3D33AB6282EA77D00F2A3F0 /* AppDelegate.swift in Sources */,
 				F3139E73282EACCD008E4CDC /* HomeController.swift in Sources */,
 				F3BE94EA282FD847002BEF43 /* SetupController.swift in Sources */,
