@@ -14,6 +14,7 @@ class MedicationScheduleController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
@@ -28,6 +29,19 @@ class MedicationScheduleController: UIViewController {
         
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToHome" {
+            let VC = segue.destination as! HomeController;
+            
+            if (dateTextField.text == ""){
+                VC.scheduleVar = "Date"
+            } else{
+                VC.scheduleVar = dateTextField.text ?? "Date"
+            }
+        }
+    }
+    
     @objc func datePickerValueChanged(sender: UIDatePicker){
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"

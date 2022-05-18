@@ -213,6 +213,7 @@
                     <navigationItem key="navigationItem" id="R3j-7n-6W9"/>
                     <connections>
                         <outlet property="scheduleDate" destination="5pg-4i-0BX" id="Aqx-Gu-OeE"/>
+                        <outlet property="userScheduleDate" destination="5pg-4i-0BX" id="ATc-Ne-qgz"/>
                         <outlet property="welcomeTitle" destination="O7Q-Fo-e8k" id="D4c-bf-BAZ"/>
                     </connections>
                 </viewController>
@@ -249,7 +250,7 @@
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="bV1-JP-Goy" kind="show" id="6jn-ji-80A"/>
+                                    <segue destination="bV1-JP-Goy" kind="show" identifier="backToHome" id="6jn-ji-80A"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -425,6 +426,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="il0-ir-XIw"/>
         <segue reference="6jn-ji-80A"/>
     </inferredMetricsTieBreakers>
     <resources>
