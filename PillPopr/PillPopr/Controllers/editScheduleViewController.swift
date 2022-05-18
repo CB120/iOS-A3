@@ -8,19 +8,13 @@ import UIKit
 
 class editScheduleViewController: UIViewController {
     
-    @IBOutlet weak var chosenDate: UILabel!
     
-    var scheduleDate: String = "";
+    @IBOutlet weak var scheduleDateTitle: UILabel!
+    var scheduleDate: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        chosenDate.text = scheduleDate
-        
+        scheduleDateTitle.text = scheduleDate;
     }
-    
-    
-
-
 }
 

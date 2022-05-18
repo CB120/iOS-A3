@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -213,7 +212,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="R3j-7n-6W9"/>
                     <connections>
-                        <outlet property="editScheduleButton" destination="CsH-1Q-1Ot" id="XBW-pI-vbh"/>
                         <outlet property="scheduleDate" destination="5pg-4i-0BX" id="Aqx-Gu-OeE"/>
                         <outlet property="userScheduleDate" destination="5pg-4i-0BX" id="ATc-Ne-qgz"/>
                         <outlet property="welcomeTitle" destination="O7Q-Fo-e8k" id="D4c-bf-BAZ"/>
@@ -271,18 +269,11 @@
         <!--Edit Schedule View Controller-->
         <scene sceneID="Fin-hI-12P">
             <objects>
-                <viewController id="rYE-f3-9lI" customClass="editScheduleViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D7t-2i-ymY">
+                <viewController id="rYE-f3-9lI" customClass="editScheduleViewController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D7t-2i-ymY" customClass="UITextView" customModule="PillPopr" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medication Schedule" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3o9-4n-veY">
-                                <rect key="frame" x="47" y="97" width="304" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
-                                <color key="textColor" red="0.1333333333" green="0.47843137250000001" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i48-YY-rgC">
                                 <rect key="frame" x="89" y="749" width="237" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -294,11 +285,11 @@
                                     <segue destination="gTO-fb-jeI" kind="show" id="ubv-nh-9i8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6P-Yw-1fn" userLabel="Chosen Date">
-                                <rect key="frame" x="133" y="241" width="148" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Medication Schedule" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkh-31-EAV">
+                                <rect key="frame" x="5" y="88" width="404" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
+                                <color key="textColor" red="0.1333333333" green="0.47843137250000001" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -307,7 +298,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MhM-W4-RYj"/>
                     <connections>
-                        <outlet property="chosenDate" destination="h6P-Yw-1fn" id="EAX-0I-Mxs"/>
+                        <outlet property="scheduleDateTitle" destination="Mkh-31-EAV" id="a1Y-BQ-gyf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqq-Lj-DgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -442,9 +433,6 @@
         <segue reference="6jn-ji-80A"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

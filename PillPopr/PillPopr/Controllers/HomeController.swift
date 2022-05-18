@@ -7,13 +7,13 @@
 
 
 import UIKit
+//var newMedicationScheduleController = MedicationScheduleController();
 
 class HomeController: UIViewController {
 
     @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
     @IBOutlet weak var userScheduleDate: UILabel!
-    @IBOutlet weak var editScheduleButton: UIButton!
     
     var name: String = "User";
     var scheduleVar: String = "";
@@ -27,8 +27,7 @@ class HomeController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToEditSchedule" {
             let VC = segue.destination as! editScheduleViewController;
-            
-            VC.scheduleDate = self.scheduleVar;
+            VC.scheduleDate = scheduleVar;
         }
     }
 }
