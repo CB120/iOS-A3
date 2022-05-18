@@ -13,6 +13,7 @@ class HomeController: UIViewController {
     @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
     @IBOutlet weak var userScheduleDate: UILabel!
+    @IBOutlet weak var editScheduleButton: UIButton!
     
     var name: String = "User";
     var scheduleVar: String = "";
@@ -21,5 +22,13 @@ class HomeController: UIViewController {
         super.viewDidLoad();
         welcomeTitle.text = "Welcome " + name;
         userScheduleDate.text = scheduleVar;
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEditSchedule" {
+            let VC = segue.destination as! editScheduleViewController;
+            
+            VC.scheduleDate = self.scheduleVar;
+        }
     }
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -193,7 +194,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Edit Schedule &gt;"/>
                                         <connections>
-                                            <segue destination="rYE-f3-9lI" kind="show" id="X8D-2V-Vtw"/>
+                                            <segue destination="rYE-f3-9lI" kind="show" identifier="goToEditSchedule" id="LTf-uh-agh"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3L-ts-xsz">
@@ -212,6 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="R3j-7n-6W9"/>
                     <connections>
+                        <outlet property="editScheduleButton" destination="CsH-1Q-1Ot" id="XBW-pI-vbh"/>
                         <outlet property="scheduleDate" destination="5pg-4i-0BX" id="Aqx-Gu-OeE"/>
                         <outlet property="userScheduleDate" destination="5pg-4i-0BX" id="ATc-Ne-qgz"/>
                         <outlet property="welcomeTitle" destination="O7Q-Fo-e8k" id="D4c-bf-BAZ"/>
@@ -292,11 +294,21 @@
                                     <segue destination="gTO-fb-jeI" kind="show" id="ubv-nh-9i8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6P-Yw-1fn" userLabel="Chosen Date">
+                                <rect key="frame" x="133" y="241" width="148" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ws1-nt-xCl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="MhM-W4-RYj"/>
+                    <connections>
+                        <outlet property="chosenDate" destination="h6P-Yw-1fn" id="EAX-0I-Mxs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqq-Lj-DgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -430,6 +442,9 @@
         <segue reference="6jn-ji-80A"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
