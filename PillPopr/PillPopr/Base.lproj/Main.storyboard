@@ -137,83 +137,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-il-y5V">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-il-y5V">
                                 <rect key="frame" x="89" y="745" width="237" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add new Schedule">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="X4G-6w-7Ta" kind="show" id="il0-ir-XIw"/>
+                                    <segue destination="gTO-fb-jeI" kind="show" id="NfR-bb-c1y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-Fo-e8k">
-                                <rect key="frame" x="55" y="88" width="304" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-le-Rpd">
+                                <rect key="frame" x="0.0" y="102" width="414" height="540"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="540" id="Rae-Nh-5jR"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="107" id="nDx-NZ-ddZ" customClass="CustomTableViewCell" customModule="PillPopr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="107"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nDx-NZ-ddZ" id="WYd-Il-4nz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sa-HR-8ev">
+                                                    <rect key="frame" x="30" y="21" width="42" height="65"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qx9-0i-cyg">
+                                                    <rect key="frame" x="321" y="38" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qx9-0i-cyg" firstAttribute="leading" secondItem="1Sa-HR-8ev" secondAttribute="trailing" constant="252" id="HZc-oc-i4V"/>
+                                                <constraint firstItem="1Sa-HR-8ev" firstAttribute="top" secondItem="WYd-Il-4nz" secondAttribute="topMargin" constant="10" id="UAc-Dk-8fN"/>
+                                                <constraint firstItem="1Sa-HR-8ev" firstAttribute="leading" secondItem="WYd-Il-4nz" secondAttribute="leadingMargin" constant="10" id="atU-s0-g8O"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1Sa-HR-8ev" secondAttribute="bottom" constant="10" id="dzB-WT-luu"/>
+                                                <constraint firstItem="Qx9-0i-cyg" firstAttribute="centerY" secondItem="1Sa-HR-8ev" secondAttribute="centerY" id="mZY-ba-j4R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="clickme" destination="Qx9-0i-cyg" id="RhA-ff-4bo"/>
+                                            <outlet property="label" destination="1Sa-HR-8ev" id="lxe-mE-JTy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-Fo-e8k">
+                                <rect key="frame" x="55" y="28" width="304" height="66"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
                                 <color key="textColor" red="0.1333333333" green="0.47843137250000001" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfT-TB-MV2">
-                                <rect key="frame" x="20" y="162" width="358" height="244"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Input Should be here " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pg-4i-0BX">
-                                        <rect key="frame" x="8" y="15" width="263" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-QE-v5X">
-                                        <rect key="frame" x="18" y="63" width="116" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XW-KY-NUQ">
-                                        <rect key="frame" x="18" y="128" width="116" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmb-o1-Dz7">
-                                        <rect key="frame" x="18" y="96" width="116" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-1Q-1Ot">
-                                        <rect key="frame" x="8" y="193" width="149" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Edit Schedule &gt;"/>
-                                        <connections>
-                                            <segue destination="rYE-f3-9lI" kind="show" identifier="goToEditSchedule" id="LTf-uh-agh"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3L-ts-xsz">
-                                        <rect key="frame" x="18" y="159" width="116" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="tintColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0SI-4Z-VFH"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="centerX" secondItem="wQF-HJ-M8e" secondAttribute="centerX" id="7PK-ir-O3o"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="centerX" secondItem="hyq-il-y5V" secondAttribute="centerX" id="9Zd-4L-eK5"/>
+                            <constraint firstItem="O7Q-Fo-e8k" firstAttribute="top" secondItem="wQF-HJ-M8e" secondAttribute="topMargin" constant="-16" id="DRK-Jq-r7L"/>
+                            <constraint firstItem="hyq-il-y5V" firstAttribute="top" secondItem="RtQ-le-Rpd" secondAttribute="bottom" constant="58" id="J4B-EP-WoZ"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="top" secondItem="O7Q-Fo-e8k" secondAttribute="bottom" constant="8" id="Rnw-z3-bf8"/>
+                            <constraint firstItem="O7Q-Fo-e8k" firstAttribute="leading" secondItem="0SI-4Z-VFH" secondAttribute="leading" constant="55" id="kIf-kC-amL"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="leading" secondItem="0SI-4Z-VFH" secondAttribute="leading" id="peN-hj-EbU"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="centerX" secondItem="O7Q-Fo-e8k" secondAttribute="centerX" id="qI7-EP-sqm"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="top" secondItem="0SI-4Z-VFH" secondAttribute="top" constant="58" id="taP-Ih-oyK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R3j-7n-6W9"/>
                     <connections>
-                        <outlet property="scheduleDate" destination="5pg-4i-0BX" id="Aqx-Gu-OeE"/>
-                        <outlet property="userScheduleDate" destination="5pg-4i-0BX" id="ATc-Ne-qgz"/>
+                        <outlet property="table" destination="RtQ-le-Rpd" id="ujf-hk-Ptx"/>
                         <outlet property="welcomeTitle" destination="O7Q-Fo-e8k" id="D4c-bf-BAZ"/>
                     </connections>
                 </viewController>
@@ -224,9 +220,10 @@
         <!--Medication Schedule Controller-->
         <scene sceneID="q04-xr-FaK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kix-d0-7Tq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="X4G-6w-7Ta" customClass="MedicationScheduleController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34h-ow-mXB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Medication Schedule" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-iE-J0N">
@@ -249,9 +246,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Confrim Add Schdule">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="bV1-JP-Goy" kind="show" identifier="backToHome" id="6jn-ji-80A"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2hE-2x-UJa"/>
@@ -262,16 +256,15 @@
                         <outlet property="dateTextField" destination="yCU-gH-jZr" id="N6u-Zv-Lar"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kix-d0-7Tq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="-271.20535714285711"/>
+            <point key="canvasLocation" x="1735" y="-956"/>
         </scene>
         <!--Edit Schedule View Controller-->
         <scene sceneID="Fin-hI-12P">
             <objects>
                 <viewController id="rYE-f3-9lI" customClass="editScheduleViewController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7t-2i-ymY" customClass="UITextView" customModule="PillPopr" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i48-YY-rgC">
@@ -281,9 +274,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Add Medication">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="gTO-fb-jeI" kind="show" id="ubv-nh-9i8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Medication Schedule" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkh-31-EAV">
                                 <rect key="frame" x="5" y="88" width="404" height="105"/>
@@ -303,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqq-Lj-DgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="416.51785714285711"/>
+            <point key="canvasLocation" x="2709" y="767"/>
         </scene>
         <!--New Med Controller-->
         <scene sceneID="NnH-bY-Fvl">
@@ -429,8 +419,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="il0-ir-XIw"/>
-        <segue reference="6jn-ji-80A"/>
+        <segue reference="PmW-Xl-Fn8"/>
+        <segue reference="fR6-7W-KqK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
@@ -447,9 +437,6 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
