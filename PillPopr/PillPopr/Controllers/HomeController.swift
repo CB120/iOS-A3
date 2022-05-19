@@ -22,12 +22,15 @@ class HomeController: UIViewController {
         super.viewDidLoad();
         welcomeTitle.text = "Welcome " + name;
         userScheduleDate.text = scheduleVar;
+        SearchObjectController().search()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "goToEditSchedule" {
             let VC = segue.destination as! editScheduleViewController;
             VC.scheduleDate = scheduleVar;
         }
     }
+    
 }

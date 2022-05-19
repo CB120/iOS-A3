@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F3139E71282EA8A4008E4CDC /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3139E70282EA8A4008E4CDC /* SplashScreenController.swift */; };
 		F3139E73282EACCD008E4CDC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3139E72282EACCD008E4CDC /* HomeController.swift */; };
+		F3A210582836206300AFB8D1 /* SearchObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A210572836206300AFB8D1 /* SearchObjectController.swift */; };
+		F3A2105B283621F000AFB8D1 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2105A283621F000AFB8D1 /* Results.swift */; };
 		F3BE94E4282FD058002BEF43 /* MedicationScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E3282FD058002BEF43 /* MedicationScheduleController.swift */; };
 		F3BE94E6282FD529002BEF43 /* NewMedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E5282FD529002BEF43 /* NewMedController.swift */; };
 		F3BE94E8282FD69F002BEF43 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		F3139E70282EA8A4008E4CDC /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		F3139E72282EACCD008E4CDC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F3A210572836206300AFB8D1 /* SearchObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchObjectController.swift; sourceTree = "<group>"; };
+		F3A2105A283621F000AFB8D1 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		F3BE94E3282FD058002BEF43 /* MedicationScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationScheduleController.swift; sourceTree = "<group>"; };
 		F3BE94E5282FD529002BEF43 /* NewMedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedController.swift; sourceTree = "<group>"; };
 		F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		F3A210592836215600AFB8D1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F3A210572836206300AFB8D1 /* SearchObjectController.swift */,
+				F3A2105A283621F000AFB8D1 /* Results.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		F3D33AA9282EA77D00F2A3F0 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 				F3D33AB5282EA77D00F2A3F0 /* AppDelegate.swift */,
 				F3D33AB7282EA77D00F2A3F0 /* SceneDelegate.swift */,
 				F3139E6F282EA881008E4CDC /* Controllers */,
+				F3A210592836215600AFB8D1 /* API */,
 				F3D33ABB282EA77D00F2A3F0 /* Main.storyboard */,
 				F3D33AC1282EA77E00F2A3F0 /* Assets.xcassets */,
 				F3D33AC3282EA77E00F2A3F0 /* LaunchScreen.storyboard */,
@@ -171,7 +185,9 @@
 				F3D33AB6282EA77D00F2A3F0 /* AppDelegate.swift in Sources */,
 				F3139E73282EACCD008E4CDC /* HomeController.swift in Sources */,
 				F3BE94EA282FD847002BEF43 /* SetupController.swift in Sources */,
+				F3A210582836206300AFB8D1 /* SearchObjectController.swift in Sources */,
 				F3D33AB8282EA77D00F2A3F0 /* SceneDelegate.swift in Sources */,
+				F3A2105B283621F000AFB8D1 /* Results.swift in Sources */,
 				F3D33AC0282EA77D00F2A3F0 /* PillPopr.xcdatamodeld in Sources */,
 				F3BE94E6282FD529002BEF43 /* NewMedController.swift in Sources */,
 				F3BE94E4282FD058002BEF43 /* MedicationScheduleController.swift in Sources */,
