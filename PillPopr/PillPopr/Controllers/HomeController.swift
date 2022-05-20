@@ -9,38 +9,36 @@
 import UIKit
 //var newMedicationScheduleController = MedicationScheduleController();
 
-struct idk: Codable{
+struct medArray: Codable{
     let title: String
     let click: Bool
 }
 
 class HomeController: UIViewController, UITableViewDataSource {
 
-    
+    // IBOutlet Variables
 
-    @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
-    @IBOutlet weak var userScheduleDate: UILabel!
     @IBOutlet weak var table:UITableView!
     
-   
+    // Global variables
+    var name: String = "User"
+    var scheduleVar: String = "";
     
     let KEY_HIGH_SCORE = "highScore"
     
-    var medlist:[idk] = [
-        idk(title: "panadol", click: false),
-        idk(title: "vitamin D", click: false),
-        idk(title: "omega 3", click: false),
-        idk(title: "vitamin C", click: false)
+    var medlist:[medArray] = [
+        medArray(title: "panadol", click: false),
+        medArray(title: "vitamin D", click: false),
+        medArray(title: "omega 3", click: false),
+        medArray(title: "vitamin C", click: false)
 ]
 
     
-    var name: String = "User";
-    var scheduleVar: String = "";
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        self.medlist = readHighScore()
+        self.medlist = readMedSchedule()
         table.dataSource = self
         welcomeTitle.text = "Welcome " + name;
     }
@@ -52,11 +50,11 @@ class HomeController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func writeHighScore(tempMed: idk){
+    func writeMedSchedule(tempMed: medArray){
         let defaults = UserDefaults.standard
         
         //read from UserDefaults
-        medlist = readHighScore()
+        medlist = readMedSchedule()
         
         //add data from game
         medlist.append(tempMed)
@@ -66,11 +64,11 @@ class HomeController: UIViewController, UITableViewDataSource {
         
     }
     
-    func readHighScore() -> [idk]{
+    func readMedSchedule() -> [medArray]{
         let defaults = UserDefaults.standard
-        //return highscore array from UserDefaults
+        //return schedule array from UserDefaults
         if let savedArraryData = defaults.value(forKey: KEY_HIGH_SCORE) as? Data{
-            if let array = try? PropertyListDecoder().decode(Array<idk>.self, from: savedArraryData){
+            if let array = try? PropertyListDecoder().decode(Array<medArray>.self, from: savedArraryData){
                 return array
                 
             }else{
@@ -94,7 +92,7 @@ class HomeController: UIViewController, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         let node = medlist[indexPath.row]
         cell.label.text = node.title
-        cell.clickme.isOn = node.click
+        //cell.clickme.isOn = node.click
         return cell
     }
     

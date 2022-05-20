@@ -12,32 +12,28 @@ class SetupController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
 //    @IBOutlet weak var timeSlider: UISlider!
-//    @IBOutlet weak var StartGame: UIButton!
+    @IBOutlet weak var ConfirmBtn: UIButton!
     
-//    var newName = "error_name"
+    var newName = "error_name"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ConfirmBtn.isEnabled = false;
     }
-    // This is to make sure that the player inputs a name :)
-//    @IBAction func naming(_ sender: UITextField){
-//        newName = sender.text!
-//        if sender.text != "" {
-//            StartGame.isEnabled = true
-//        } else {
-//            StartGame.isEnabled = false
-//        }
-//    }
-//
+     //This is to make sure that the player inputs a name :)
+    @IBAction func naming(_ sender: UITextField){
+        newName = sender.text!
+        if sender.text != "" {
+            ConfirmBtn.isEnabled = true
+        } else {
+            ConfirmBtn.isEnabled = false
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToHome" {
             let VC = segue.destination as! HomeController;
+            VC.name = String(newName)
             
-            if (nameTextField.text == ""){
-                VC.name = "User";
-            } else {
-                VC.name = nameTextField.text ?? "User";
-            }
         }
     }
 }
