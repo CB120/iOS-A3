@@ -22,6 +22,7 @@
 		F3D33AC0282EA77D00F2A3F0 /* PillPopr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3D33ABE282EA77D00F2A3F0 /* PillPopr.xcdatamodeld */; };
 		F3D33AC2282EA77E00F2A3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D33AC1282EA77E00F2A3F0 /* Assets.xcassets */; };
 		F3D33AC5282EA77E00F2A3F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D33AC3282EA77E00F2A3F0 /* LaunchScreen.storyboard */; };
+		F7FEE748283663D70074CCC1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FEE747283663D70074CCC1 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F3D33AC1282EA77E00F2A3F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3D33AC4282EA77E00F2A3F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3D33AC6282EA77E00F2A3F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7FEE747283663D70074CCC1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				F3BE94E7282FD69F002BEF43 /* ConfirmationController.swift */,
 				F3139E72282EACCD008E4CDC /* HomeController.swift */,
 				F3BE94E9282FD847002BEF43 /* SetupController.swift */,
+				F7FEE747283663D70074CCC1 /* CustomTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				F3D33ABA282EA77D00F2A3F0 /* editScheduleViewController.swift in Sources */,
 				F3D33AB6282EA77D00F2A3F0 /* AppDelegate.swift in Sources */,
+				F7FEE748283663D70074CCC1 /* CustomTableViewCell.swift in Sources */,
 				F3139E73282EACCD008E4CDC /* HomeController.swift in Sources */,
 				F3BE94EA282FD847002BEF43 /* SetupController.swift in Sources */,
 				F3A210582836206300AFB8D1 /* SearchObjectController.swift in Sources */,
