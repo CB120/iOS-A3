@@ -12,7 +12,8 @@ class NewMedController: UIViewController {
     // IBOutlet Variables
     @IBOutlet weak var medName: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var ScheduleTextPick: UITextField!
+    @IBOutlet weak var ScheduleTextPick: UITextField! // Set this to be just numbers.
+    @IBOutlet weak var IntakeText: UITextField!
     
     // Global Variables
     let Schedules = ["Twice Daily", "Daily", "Alternate Days", "Weekly", "Fortnightly", "Monthly"]
@@ -26,12 +27,11 @@ class NewMedController: UIViewController {
         
         ScheduleTextPick.inputView = pickerView
     }
-        // Do any additional setup after loading the view.
     
     
     @IBAction func returnPressed(_ sender: UIButton){
         let homeController = HomeController()
-        homeController.writeMedSchedule(tempMed: medArray(title:medName.text!, click:false))
+        homeController.writeMedSchedule(tempMed: medArray(title:medName.text!, intake: IntakeText.text!, schedule: ScheduleTextPick.text!, click: false))
     }
 }
 

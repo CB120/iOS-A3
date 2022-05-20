@@ -11,6 +11,8 @@ import UIKit
 
 struct medArray: Codable{
     let title: String
+    let intake: String
+    let schedule : String
     let click: Bool
 }
 
@@ -28,10 +30,10 @@ class HomeController: UIViewController, UITableViewDataSource {
     let KEY_HIGH_SCORE = "highScore"
     
     var medlist:[medArray] = [
-        medArray(title: "panadol", click: false),
-        medArray(title: "vitamin D", click: false),
-        medArray(title: "omega 3", click: false),
-        medArray(title: "vitamin C", click: false)
+        medArray(title: "panadol", intake: "30", schedule: "Daily", click: false),
+        medArray(title: "vitamin D", intake: "30", schedule: "Daily", click: false),
+        medArray(title: "omega 3", intake: "30", schedule: "Daily", click: false),
+        medArray(title: "vitamin C", intake: "30", schedule: "Daily", click: false)
 ]
 
     
@@ -92,6 +94,10 @@ class HomeController: UIViewController, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         let node = medlist[indexPath.row]
         cell.label.text = node.title
+        cell.label.text = node.intake
+        cell.label.text = node.schedule
+        
+        // Fix this up tomorrow!
         //cell.clickme.isOn = node.click
         return cell
     }
