@@ -220,7 +220,6 @@
         <!--Medication Schedule Controller-->
         <scene sceneID="q04-xr-FaK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kix-d0-7Tq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="X4G-6w-7Ta" customClass="MedicationScheduleController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34h-ow-mXB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -256,6 +255,7 @@
                         <outlet property="dateTextField" destination="yCU-gH-jZr" id="N6u-Zv-Lar"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kix-d0-7Tq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1735" y="-956"/>
         </scene>
@@ -360,6 +360,7 @@
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="bubblePressed:" destination="gTO-fb-jeI" eventType="touchUpInside" id="FxE-r0-ZHv"/>
                                     <segue destination="xbI-99-2uc" kind="show" id="PmW-Xl-Fn8"/>
                                 </connections>
                             </button>
@@ -368,6 +369,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Li1-L6-DOX"/>
+                    <connections>
+                        <outlet property="medName" destination="yeI-gS-Dua" id="Fs5-lt-5qa"/>
+                        <outlet property="submitButton" destination="iuL-ee-iMW" id="U1z-a0-SPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lE4-Qq-qfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
