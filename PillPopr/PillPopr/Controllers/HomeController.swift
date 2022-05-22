@@ -43,7 +43,6 @@ class HomeController: UIViewController, UITableViewDataSource {
         self.medlist = readMedSchedule()
         table.dataSource = self
         welcomeTitle.text = "Welcome " + name;
-        SearchObjectController().search()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
