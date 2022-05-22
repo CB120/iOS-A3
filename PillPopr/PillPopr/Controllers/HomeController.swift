@@ -42,7 +42,7 @@ class HomeController: UIViewController, UITableViewDataSource {
         super.viewDidLoad();
         self.medlist = readMedSchedule()
         table.dataSource = self
-        welcomeTitle.text = "Welcome " + name;
+        welcomeTitle.text = "Welcome " + UserDefaults.standard.string(forKey: "Name")!;
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
