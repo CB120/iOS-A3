@@ -31,8 +31,7 @@ class SetupController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToHome" {
-            let VC = segue.destination as! HomeController;
-            VC.name = String(newName)
+            UserDefaults.standard.set(String(newName), forKey: "Name")
             
         }
     }
