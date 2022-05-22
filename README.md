@@ -5,7 +5,7 @@
 - Kevin Nguyen || 13586779
 - Keegan Wong || 13605771 
 - Christian Burgio ||
-- Simon Nguyen ||
+- Simon Nguyen || 13586969
 
 # Links
 - Github: https://github.com/CB120/iOS-A3
