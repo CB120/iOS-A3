@@ -7,27 +7,22 @@
 
 import Foundation
 import UIKit
-struct Result : Decodable {
-    var results : [String]
-    //var total : Int
+struct drugs: Codable {
+    //let last_updated : String
+    let results : [Results]
 }
-class TableViewController: UITableViewController{
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 0
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        return cell
-    }
+struct Results: Codable {
+    let products: [Products]
 }
+struct Products : Codable {
+    let brand_name : String
+    let active_ingredients : [ActiveIngredients]
+}
+struct ActiveIngredients : Codable {
+    let name : String
+    let strength : String
+}
+
 
 class SearchObjectController : ObservableObject{
     static let shared = SearchObjectController()
@@ -37,7 +32,7 @@ class SearchObjectController : ObservableObject{
     func search(){
         guard let url = URL(string: "https://api.fda.gov/drug/drugsfda.json") else {return}
         URLSession.shared.dataTask(with: url) { data, _, _ in
-            let results = try! JSONDecoder().decode(Result.self, from: data!)
+            let results = try! JSONDecoder().decode(drugs.self, from: data!)
             print(results)
         }
         .resume()
