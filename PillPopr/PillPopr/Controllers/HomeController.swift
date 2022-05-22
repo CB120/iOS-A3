@@ -97,7 +97,6 @@ class HomeController: UIViewController, UITableViewDataSource {
         cell.intake.text = node.intake
         cell.schedule.text = node.schedule
         
-        // Fix this up tomorrow!
         //cell.clickme.isOn = node.click
         return cell
     }
