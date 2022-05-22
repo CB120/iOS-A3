@@ -94,8 +94,8 @@ class HomeController: UIViewController, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         let node = medlist[indexPath.row]
         cell.label.text = node.title
-        cell.label.text = node.intake
-        cell.label.text = node.schedule
+        cell.intake.text = node.intake
+        cell.schedule.text = node.schedule
         
         // Fix this up tomorrow!
         //cell.clickme.isOn = node.click

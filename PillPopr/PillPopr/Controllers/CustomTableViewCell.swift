@@ -11,7 +11,9 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var label:UILabel!
     @IBOutlet weak var clickme:UISwitch!
-
+    @IBOutlet weak var intake: UILabel!
+    @IBOutlet weak var schedule: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
