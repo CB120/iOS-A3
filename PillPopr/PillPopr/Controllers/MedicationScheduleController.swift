@@ -26,17 +26,17 @@ class MedicationScheduleController: UIViewController {
             }
         }
         
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        dateTextField.text = formatter.string(from: date)
-        dateTextField.textColor = .link
-        
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
-        datePicker.frame.size = CGSize(width: 0, height: 200)
-        dateTextField.inputView = datePicker
+//        let date = Date()
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd/MM/yyyy"
+//  //      dateTextField.text = formatter.string(from: date)
+//        dateTextField.textColor = .link
+//
+//        let datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .date
+//        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
+//        datePicker.frame.size = CGSize(width: 0, height: 200)
+//        dateTextField.inputView = datePicker
         
     }
     
