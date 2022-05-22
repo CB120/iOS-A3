@@ -51,6 +51,10 @@
                                 <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjE-sh-tTa">
+                                <rect key="frame" x="87" y="366" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.47843137254901957" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -84,6 +88,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="naming:" destination="dnO-Ji-oMJ" eventType="editingDidBegin" id="7X2-tt-u8p"/>
+                                    <action selector="naming:" destination="dnO-Ji-oMJ" eventType="editingChanged" id="I7C-q0-skr"/>
+                                    <action selector="naming:" destination="dnO-Ji-oMJ" eventType="editingDidEnd" id="nVt-nA-4Nu"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCN-03-5gb">
                                 <rect key="frame" x="160" y="237" width="94" height="24"/>
@@ -111,9 +120,10 @@
                                     <segue destination="bV1-JP-Goy" kind="show" identifier="goToHome" id="hdb-PZ-Mbg"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Lty-Tr-8AS">
-                                <rect key="frame" x="34" y="414" width="360" height="335"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Lty-Tr-8AS">
+                                <rect key="frame" x="27" y="402" width="360" height="335"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <locale key="locale" localeIdentifier="en_AU"/>
                             </datePicker>
                         </subviews>
@@ -122,7 +132,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="YE2-FW-hTi"/>
                     <connections>
-                        <outlet property="nameTextField" destination="uum-BB-H9i" id="zrL-JX-Yq8"/>
+                        <outlet property="ConfirmBtn" destination="rqA-Yv-DbD" id="X3D-hT-Rkw"/>
+                        <outlet property="nameTextField" destination="uum-BB-H9i" id="GLb-uq-Hjf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ0-yn-g9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -134,86 +145,106 @@
             <objects>
                 <viewController id="bV1-JP-Goy" customClass="HomeController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQF-HJ-M8e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-il-y5V">
-                                <rect key="frame" x="89" y="745" width="237" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-il-y5V">
+                                <rect key="frame" x="88" y="668" width="237" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add new Schedule">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="X4G-6w-7Ta" kind="show" id="il0-ir-XIw"/>
+                                    <segue destination="gTO-fb-jeI" kind="show" id="NfR-bb-c1y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-Fo-e8k">
-                                <rect key="frame" x="55" y="88" width="304" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-le-Rpd">
+                                <rect key="frame" x="0.0" y="146" width="414" height="540"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="540" id="Rae-Nh-5jR"/>
+                                </constraints>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.13333333333333333" green="0.47843137254901957" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="107" id="nDx-NZ-ddZ" customClass="CustomTableViewCell" customModule="PillPopr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="107"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nDx-NZ-ddZ" id="WYd-Il-4nz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="intake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2G-du-gT2">
+                                                    <rect key="frame" x="161" y="20" width="68" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDu-T4-ERJ">
+                                                    <rect key="frame" x="287" y="20" width="107" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Sa-HR-8ev">
+                                                    <rect key="frame" x="37" y="21" width="88" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1Sa-HR-8ev" firstAttribute="top" secondItem="WYd-Il-4nz" secondAttribute="topMargin" constant="10" id="UAc-Dk-8fN"/>
+                                                <constraint firstItem="1Sa-HR-8ev" firstAttribute="leading" secondItem="WYd-Il-4nz" secondAttribute="leadingMargin" constant="10" id="atU-s0-g8O"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1Sa-HR-8ev" secondAttribute="bottom" constant="10" id="dzB-WT-luu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="intake" destination="B2G-du-gT2" id="cXM-3F-kMU"/>
+                                            <outlet property="label" destination="1Sa-HR-8ev" id="lxe-mE-JTy"/>
+                                            <outlet property="schedule" destination="XDu-T4-ERJ" id="wWH-ni-0sy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-Fo-e8k">
+                                <rect key="frame" x="5" y="72" width="405" height="66"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="24"/>
                                 <color key="textColor" red="0.1333333333" green="0.47843137250000001" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfT-TB-MV2">
-                                <rect key="frame" x="20" y="162" width="358" height="244"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oex-WD-qer">
+                                <rect key="frame" x="88" y="806" width="237" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Input Should be here " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pg-4i-0BX">
-                                        <rect key="frame" x="8" y="15" width="263" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-QE-v5X">
-                                        <rect key="frame" x="18" y="63" width="116" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XW-KY-NUQ">
-                                        <rect key="frame" x="18" y="128" width="116" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmb-o1-Dz7">
-                                        <rect key="frame" x="18" y="96" width="116" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-1Q-1Ot">
-                                        <rect key="frame" x="8" y="193" width="149" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Edit Schedule &gt;"/>
-                                        <connections>
-                                            <segue destination="rYE-f3-9lI" kind="show" identifier="goToEditSchedule" id="LTf-uh-agh"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Panadol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3L-ts-xsz">
-                                        <rect key="frame" x="18" y="159" width="116" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
-                                        <color key="highlightedColor" systemColor="labelColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="tintColor"/>
-                            </view>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search FDA Medications">
+                                    <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6vx-TU-IZA" kind="show" id="zZ1-5A-6Vm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0SI-4Z-VFH"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="centerX" secondItem="wQF-HJ-M8e" secondAttribute="centerX" id="7PK-ir-O3o"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="centerX" secondItem="hyq-il-y5V" secondAttribute="centerX" id="9Zd-4L-eK5"/>
+                            <constraint firstItem="O7Q-Fo-e8k" firstAttribute="top" secondItem="wQF-HJ-M8e" secondAttribute="topMargin" constant="-16" id="DRK-Jq-r7L"/>
+                            <constraint firstItem="hyq-il-y5V" firstAttribute="top" secondItem="RtQ-le-Rpd" secondAttribute="bottom" constant="58" id="J4B-EP-WoZ"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="top" secondItem="O7Q-Fo-e8k" secondAttribute="bottom" constant="8" id="Rnw-z3-bf8"/>
+                            <constraint firstItem="O7Q-Fo-e8k" firstAttribute="leading" secondItem="0SI-4Z-VFH" secondAttribute="leading" constant="55" id="kIf-kC-amL"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="leading" secondItem="0SI-4Z-VFH" secondAttribute="leading" id="peN-hj-EbU"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="centerX" secondItem="O7Q-Fo-e8k" secondAttribute="centerX" id="qI7-EP-sqm"/>
+                            <constraint firstItem="RtQ-le-Rpd" firstAttribute="top" secondItem="0SI-4Z-VFH" secondAttribute="top" constant="58" id="taP-Ih-oyK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R3j-7n-6W9"/>
                     <connections>
-                        <outlet property="scheduleDate" destination="5pg-4i-0BX" id="Aqx-Gu-OeE"/>
-                        <outlet property="userScheduleDate" destination="5pg-4i-0BX" id="ATc-Ne-qgz"/>
+                        <outlet property="table" destination="RtQ-le-Rpd" id="ujf-hk-Ptx"/>
                         <outlet property="welcomeTitle" destination="O7Q-Fo-e8k" id="D4c-bf-BAZ"/>
                     </connections>
                 </viewController>
@@ -226,72 +257,49 @@
             <objects>
                 <viewController id="X4G-6w-7Ta" customClass="MedicationScheduleController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34h-ow-mXB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Medication Schedule" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-iE-J0N">
-                                <rect key="frame" x="5" y="66" width="404" height="105"/>
+                                <rect key="frame" x="12" y="88" width="404" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
                                 <color key="textColor" red="0.1333333333" green="0.47843137250000001" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCU-gH-jZr">
-                                <rect key="frame" x="145" y="179" width="125" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCU-gH-jZr">
+                                <rect key="frame" x="145" y="231" width="125" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-oY-iQb">
-                                <rect key="frame" x="73" y="633" width="269" height="43"/>
+                                <rect key="frame" x="80" y="413" width="269" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confrim Add Schdule">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="scheduleButton:" destination="X4G-6w-7Ta" eventType="touchUpInside" id="UTC-C3-wOV"/>
-                                    <segue destination="bV1-JP-Goy" kind="show" identifier="backToHome" id="6jn-ji-80A"/>
-                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Schedule Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIu-KF-Fl5">
-                                <rect key="frame" x="50" y="231" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Schedule Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khc-pE-ZuB">
-                                <rect key="frame" x="50" y="289" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="p6C-bW-f25">
-                                <rect key="frame" x="50" y="367" width="314" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2hE-2x-UJa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Krg-DW-N0d"/>
                     <connections>
-                        <outlet property="datePicker" destination="p6C-bW-f25" id="JrL-j6-fpF"/>
                         <outlet property="dateTextField" destination="yCU-gH-jZr" id="N6u-Zv-Lar"/>
-                        <outlet property="messageTF" destination="khc-pE-ZuB" id="wc9-Fd-Ne8"/>
-                        <outlet property="scheduleNameTF" destination="PIu-KF-Fl5" id="r7D-kb-0k0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kix-d0-7Tq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="-271.20535714285711"/>
+            <point key="canvasLocation" x="1735" y="-956"/>
         </scene>
         <!--Edit Schedule View Controller-->
         <scene sceneID="Fin-hI-12P">
             <objects>
                 <viewController id="rYE-f3-9lI" customClass="editScheduleViewController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7t-2i-ymY" customClass="UITextView" customModule="PillPopr" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i48-YY-rgC">
@@ -301,9 +309,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Add Medication">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="gTO-fb-jeI" kind="show" id="ubv-nh-9i8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Medication Schedule" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkh-31-EAV">
                                 <rect key="frame" x="5" y="88" width="404" height="105"/>
@@ -323,14 +328,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqq-Lj-DgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="416.51785714285711"/>
+            <point key="canvasLocation" x="2580" y="-956"/>
         </scene>
         <!--New Med Controller-->
         <scene sceneID="NnH-bY-Fvl">
             <objects>
                 <viewController id="gTO-fb-jeI" customClass="NewMedController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e4g-pB-Cow">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Medication" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-6p-8RY">
@@ -375,13 +380,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Daily, Weekly, Monthly" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3FP-Wc-1Lb">
-                                <rect key="frame" x="186" y="431" width="136" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuL-ee-iMW">
                                 <rect key="frame" x="87" y="751" width="240" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,25 +388,93 @@
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="returnPressed:" destination="gTO-fb-jeI" eventType="touchUpInside" id="fRu-q5-gGb"/>
                                     <segue destination="xbI-99-2uc" kind="show" id="PmW-Xl-Fn8"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Daily, Weekly, Monthly" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDG-Xb-Ato">
+                                <rect key="frame" x="186" y="426" width="136" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qwy-0M-8on"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Li1-L6-DOX"/>
+                    <connections>
+                        <outlet property="IntakeText" destination="Zwm-yy-Yj5" id="tuM-kP-MJG"/>
+                        <outlet property="ScheduleTextPick" destination="eDG-Xb-Ato" id="zyO-zX-9YZ"/>
+                        <outlet property="medName" destination="yeI-gS-Dua" id="Fs5-lt-5qa"/>
+                        <outlet property="submitButton" destination="iuL-ee-iMW" id="U1z-a0-SPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lE4-Qq-qfv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3592.753623188406" y="69.642857142857139"/>
+            <point key="canvasLocation" x="2794" y="70"/>
+        </scene>
+        <!--Search Object Controller-->
+        <scene sceneID="FOg-wD-0a1">
+            <objects>
+                <viewController id="6vx-TU-IZA" customClass="SearchObjectController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aeu-UC-wUS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search FDA Medications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="TFc-qN-TrY">
+                                <rect key="frame" x="67" y="88" width="280" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search by.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAb-Hd-vbK">
+                                <rect key="frame" x="139" y="246" width="136" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Filter by..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EhE-ek-jTN">
+                                <rect key="frame" x="139" y="389" width="136" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nr-42-bUf">
+                                <rect key="frame" x="160" y="197" width="94" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-pH-s7r">
+                                <rect key="frame" x="131" y="336" width="152" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="awx-Fl-ZgT"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.47843137254901957" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lNc-wD-agR"/>
+                    <connections>
+                        <outlet property="filterPickerText" destination="EhE-ek-jTN" id="nBy-h9-Mrw"/>
+                        <outlet property="searchPickerText" destination="gAb-Hd-vbK" id="f8f-ua-od6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27h-0u-JW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="804.91071428571422"/>
         </scene>
         <!--Confirmation Controller-->
         <scene sceneID="Hlz-bY-icg">
             <objects>
                 <viewController id="xbI-99-2uc" customClass="ConfirmationController" customModule="PillPopr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wqg-OT-M7V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medication Added" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFr-oO-C1X">
@@ -418,7 +484,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjM-0h-Roj">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjM-0h-Roj">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -432,6 +498,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Back to Home">
                                     <fontDescription key="titleFontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="23"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="bV1-JP-Goy" kind="show" id="fR6-7W-KqK"/>
@@ -445,11 +512,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fho-xg-k2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4452.1739130434789" y="69.642857142857139"/>
+            <point key="canvasLocation" x="3529" y="-652"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6jn-ji-80A"/>
+        <segue reference="hdb-PZ-Mbg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
@@ -461,14 +528,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
